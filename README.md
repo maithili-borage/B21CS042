@@ -162,4 +162,4 @@ Library Functions:
 - cd: Changes the current working directory to the specified location, enabling navigation through the file system.
 - cp: Copies files or directories from one location to another, allowing the duplication of content within the file system.
 
-17. 
+17. Process synchronization in XV6 prevents conflict and ensures orderly execution of concurrent processes. It avoids issues like data corruption and race conditions. XV6 employs synchronization mechanisms such as locks and semaphores. Locks protect critical sections of code, ensuring only one process can access them at a time. Semaphores act as counters to coordinate access to shared resources. These mechanisms prevent interference between processes, enabling a secure and synchronized execution environment in the operating system.
