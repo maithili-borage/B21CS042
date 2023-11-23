@@ -169,4 +169,4 @@ Library Functions:
 - Interrupts are used to handle input/output operations and interactions with devices like disks and network interfaces.
 - Interrupts also handle exceptional conditions, such as divide-by-zero errors or invalid memory access.
 
-19. 
+19. Virtual memory is a memory management technique that provides an abstraction of the storage resources that are actually available on a given machine, which creates the illusion to users of a very large (main) memory.
