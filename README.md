@@ -157,7 +157,9 @@ Library Functions:
 
 15. Xv6, like many OS, uses memory paging to enable non-contiguous memory allocation. It simplifies memory management, provides isolation between processes, and allows efficient use of physical memory. Paging facilitates demand-based loading of pages, enabling virtual memory for processes, and improving overall system performance.
    
-17. Shell commands:
+16. Shell commands:
 - ls: Displays the contents of the current directory, providing a list of files and directories.
 - cd: Changes the current working directory to the specified location, enabling navigation through the file system.
 - cp: Copies files or directories from one location to another, allowing the duplication of content within the file system.
+
+17. 
