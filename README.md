@@ -150,6 +150,7 @@ Key Components of file system -
 - System calls are interfaces provided by the operating system to allow user-level programs to communicate with the kernel.
 - These calls allows the user processes to access privileged operations like file I/O, process control, memory management etc.
 - Eg: The fork() system call is used to create a new process.
+
 Library Functions:
 - Library functions are routines provided by libraries that are linked with user-level programs.
 - Library functions are written in user-level code and use system calls to interact with the operating system.
@@ -167,3 +168,5 @@ Library Functions:
 18. Role of Interrupts in XV6:
 - Interrupts are used to handle input/output operations and interactions with devices like disks and network interfaces.
 - Interrupts also handle exceptional conditions, such as divide-by-zero errors or invalid memory access.
+
+19. 
