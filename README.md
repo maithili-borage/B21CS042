@@ -163,3 +163,7 @@ Library Functions:
 - cp: Copies files or directories from one location to another, allowing the duplication of content within the file system.
 
 17. Process synchronization in XV6 prevents conflict and ensures orderly execution of concurrent processes. It avoids issues like data corruption and race conditions. XV6 employs synchronization mechanisms such as locks and semaphores. Locks protect critical sections of code, ensuring only one process can access them at a time. Semaphores act as counters to coordinate access to shared resources. These mechanisms prevent interference between processes, enabling a secure and synchronized execution environment in the operating system.
+
+18. Role of Interrupts in XV6:
+- Interrupts are used to handle input/output operations and interactions with devices like disks and network interfaces.
+- Interrupts also handle exceptional conditions, such as divide-by-zero errors or invalid memory access.
