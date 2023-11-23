@@ -137,46 +137,27 @@ Please write your answers here
 - Zombie: After the execution, process waits for the parent status to receive the exit status. This state is zombie state.
 - Waiting: The process is waiting for some other event to complete(Eg. completion of child process).
 
+13. The file system in XV6 is a simple implementation of a Unix-like file system. It is based on the File Allocation Table (FAT) file system and consists of several key components:
+Key Components of file system - 
+- Superblock: Data structure that contains essential information about the file system like size of the file system, the location of the root directory, the block size etc.
+- Inodes or Index Nodes: Data structure to store information(file type, file size, timestamp, permission etc.) about individual files or directories.
+- Directory Entries: Directory entries map names to inodes, allowing the file system to organize files into directories.
+- Data Blocks: These blocks store the actual contents of files.
+- Bitmaps: They are  used to keep track of free and allocated blocks in the file system.
+- File Allocation Table (FAT): The FAT is used to keep track of the allocation status of data clusters on the disk.
 
-
-
-
-
-
-
-
-
-
-14. 
-The file system in XV6 is a simple implementation of a Unix-like file system. It is based on the File Allocation Table (FAT) file system and consists of several key components:
-Superblock:
-The superblock is a data structure that contains essential information about the file system, such as the size of the file system, the block size, the location of the root directory, and other metadata.
-It is typically located at a fixed position on the disk and is read into memory during the file system's initialization.
-Inodes:
-Inodes (Index Nodes) are data structures that store information about individual files and directories. Each file or directory in the file system is associated with an inode.
-Inode information includes file type, permissions, owner, group, size, timestamps, and pointers to data blocks.
-Directory Entries:
-Directory entries map names to inodes, allowing the file system to organize files into directories. Each directory is essentially a list of directory entries.
-Directory entries contain the name of the file or subdirectory and the corresponding inode number.
-Data Blocks:
-Data blocks store the actual contents of files. For small files, data may be stored directly in the inode, while larger files use a series of data blocks.
-The file system manages these data blocks, and the inode contains pointers to these blocks.
-Bitmaps:
-Bitmaps are used to keep track of free and allocated blocks in the file system. There are typically two bitmaps: one for free inodes and another for free data blocks.
-Each bit in the bitmap corresponds to a specific inode or data block, indicating whether it is in use or free.
-File Descriptors (File Table):
-The file descriptor table, maintained by the kernel, keeps track of open files for each process. Each entry in the table points to a file object, which contains information about the open file, including the corresponding inode and the current offset within the file.
-File Allocation Table (FAT):
-The FAT is used to keep track of the allocation status of data clusters on the disk. It is particularly common in FAT file systems and is used for file allocation and tracking free space.
-
-14.System Calls:
-System calls are interfaces provided by the operating system to allow user-level programs to request services from the kernel.
-These calls provide a way for user-space processes to interact with the underlying operating system kernel, accessing privileged operations such as file I/O, process control, memory management, and more.
-In XV6, system calls are invoked using a software interrupt. The user-level program triggers a trap into the kernel by executing an instruction like int 0x30, and the kernel then dispatches the appropriate system call handler based on the interrupt number.
-Example in XV6: The fork() system call is used to create a new process. The user-level program invokes it, and the kernel responds by creating a new process.
+14. System Calls:
+- System calls are interfaces provided by the operating system to allow user-level programs to communicate with the kernel.
+- These calls allows the user processes to access privileged operations like file I/O, process control, memory management etc.
+- Eg: The fork() system call is used to create a new process.
 Library Functions:
-Library functions are routines provided by libraries that are linked with user-level programs. These functions are not part of the operating system itself but are bundled with the application code.
-Library functions are written in user-level code and use system calls to interact with the operating system when necessary.
-In XV6, the standard C library (libc) provides a set of functions that abstract away the details of system calls, making it easier for programmers to write portable and efficient code.
-Example in XV6: The printf() function is part of the standard C library and is used for formatted output. It internally may use system calls like write() to output data to the console.
+- Library functions are routines provided by libraries that are linked with user-level programs.
+- Library functions are written in user-level code and use system calls to interact with the operating system.
+- Eg: The printf() function.
 
+15. Xv6, like many OS, uses memory paging to enable non-contiguous memory allocation. It simplifies memory management, provides isolation between processes, and allows efficient use of physical memory. Paging facilitates demand-based loading of pages, enabling virtual memory for processes, and improving overall system performance.
+   
+17. Shell commands:
+- ls: Displays the contents of the current directory, providing a list of files and directories.
+- cd: Changes the current working directory to the specified location, enabling navigation through the file system.
+- cp: Copies files or directories from one location to another, allowing the duplication of content within the file system.
